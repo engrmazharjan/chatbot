@@ -1,4 +1,6 @@
-import Chat from "@/components/Chat";
+// import Chat from "@/components/Chat";
+import Providers from "@/components/Providers";
+import Chat from "../components/Chat";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -16,8 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Chat />
-      <body className={inter.className}>{children}</body>
+      <Providers>
+        <body className={inter.className}>
+          <Chat />
+          {children}
+        </body>
+      </Providers>
     </html>
   );
 }
